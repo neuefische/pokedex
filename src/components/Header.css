@@ -1,12 +1,12 @@
 .Header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
-  background: #cc0000;
+  background: #1e2665;
 }
 
 .Header--title {
-  background: #3b4cca;
-  color: #ffde00;
+  color: #f2d50d;
+  margin: 0 20px;
 }

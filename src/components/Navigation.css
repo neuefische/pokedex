@@ -10,9 +10,18 @@
   align-items: center;
   height: 100%;
   width: 80px;
-  background: red;
   border: none;
   font-size: 18px;
-  color: #ffde00;
+  color: #c4c9ef;
   text-decoration: none;
+}
+
+.Navigation--anchor:hover {
+  color: #1e2665;
+  background: #c4c9ef;
+}
+
+.active {
+  color: #1e2665;
+  background: #c4c9ef;
 }
