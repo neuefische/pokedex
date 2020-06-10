@@ -1,0 +1,18 @@
+.Navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+
+.Navigation--anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+  background: red;
+  border: none;
+  font-size: 18px;
+  color: #ffde00;
+  text-decoration: none;
+}

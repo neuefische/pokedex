@@ -1,21 +1,20 @@
 import React from "react";
+import Home from "./components/Home";
+import "./components/base.css";
+import Header from "./components/Header";
+import Pokedex from "./components/Pokedex";
+import Navigation from "./components/Navigation";
 
 function App() {
+  const pathname = window.location.pathname;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header>
+        <Navigation />
+      </Header>
+      {pathname === "/" && <Home />}
+      {pathname === "/pokedex" && <Pokedex />}
     </div>
   );
 }

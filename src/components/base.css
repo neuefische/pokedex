@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 80px auto;
+  height: 100vh;
+}
