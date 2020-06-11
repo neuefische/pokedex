@@ -4,7 +4,7 @@ import Pokeball from "./Pokeball";
 
 function Home() {
   return (
-    <main className="Home-container">
+    <main className="Home">
       <Pokeball />
     </main>
   );

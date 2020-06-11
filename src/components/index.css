@@ -13,12 +13,6 @@ body {
   );
 }
 
-.App {
-  display: grid;
-  grid-template-rows: 80px auto;
-  height: 100vh;
-}
-
 @media (max-width: 900px) {
   body {
     margin: 0 50px;

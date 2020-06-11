@@ -3,7 +3,7 @@ import "./Pokedex.css";
 
 export default function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
-  const [pokemonDetail, setPokemonDetail] = useState(false);
+  const [pokemonDetail, setPokemonDetail] = useState("");
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
@@ -16,7 +16,7 @@ export default function Pokedex() {
       });
   }, []);
 
-  function handleClick(pokemon) {
+  function selectPokemon(pokemon) {
     fetch(`${pokemon.url}`)
       .then((response) => response.json())
       .then((data) => {
@@ -35,7 +35,7 @@ export default function Pokedex() {
           <li key={pokemon.name}>
             <button
               className="Pokedex--list__button active"
-              onClick={() => handleClick(pokemon)}
+              onClick={() => selectPokemon(pokemon)}
             >
               {pokemon.name}
             </button>

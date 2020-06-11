@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./components/Home";
-import "./components/base.css";
+import "./components/App.css";
 import Header from "./components/Header";
 import Pokedex from "./components/Pokedex";
 import Navigation from "./components/Navigation";
