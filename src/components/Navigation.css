@@ -1,0 +1,22 @@
+.Navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+
+.Navigation--anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.Navigation--anchor:hover {
+  color: rgba(128, 0, 0, 1);
+  background: white;
+}
