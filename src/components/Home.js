@@ -1,8 +1,13 @@
 import React from "react";
 import "./Home.css";
+import Pokeball from "./Pokeball";
 
 function Home() {
-  return <div className="Home-container">Here is the Home screen</div>;
+  return (
+    <main className="Home-container">
+      <Pokeball />
+    </main>
+  );
 }
 
 export default Home;

@@ -3,8 +3,14 @@
 }
 
 body {
-  margin: 0px 200px;
+  margin: 0px 100px;
   height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    124deg,
+    rgba(255, 255, 255, 1) 55%,
+    rgba(212, 212, 212, 1) 100%
+  );
 }
 
 .App {

@@ -12,16 +12,11 @@
   width: 80px;
   border: none;
   font-size: 18px;
-  color: #c4c9ef;
+  color: white;
   text-decoration: none;
 }
 
 .Navigation--anchor:hover {
-  color: #1e2665;
-  background: #c4c9ef;
-}
-
-.active {
-  color: #1e2665;
-  background: #c4c9ef;
+  color: rgba(128, 0, 0, 1);
+  background: white;
 }
