@@ -43,25 +43,23 @@ export default function Pokedex() {
         ))}
       </ul>
 
-      {pokemonDetail ? (
-        <div className="Pokedex--detail">
-          <div className="Pokedex--detail__pokemon">
-            <p>{pokemonDetail.name}</p>
-            <img
-              alt={pokemonDetail.name}
-              src={pokemonDetail.sprites.front_default}
-            />
-          </div>
-        </div>
-      ) : (
-        <div className="Pokedex--detail">
-          <div className="Pokedex--detail__pokemon">
+      <div className="Pokedex--detail">
+        <div className="Pokedex--detail__pokemon">
+          {pokemonDetail ? (
+            <>
+              <p>{pokemonDetail.name}</p>
+              <img
+                alt={pokemonDetail.name}
+                src={pokemonDetail.sprites.front_default}
+              />
+            </>
+          ) : (
             <p>
               No Pokemon to show, please select one from the list to display!
             </p>
-          </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
