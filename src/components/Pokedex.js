@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export default function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -33,7 +34,10 @@ export default function Pokedex() {
         <PokedexListHeadline>Select your Pokemon:</PokedexListHeadline>
         {pokemonList.map((pokemon) => (
           <li key={pokemon.name}>
-            <PokedexListButton onClick={() => selectPokemon(pokemon)}>
+            <PokedexListButton
+              to={`/pokedex/${pokemon.name}`}
+              onClick={() => selectPokemon(pokemon)}
+            >
               {pokemon.name}
             </PokedexListButton>
           </li>
@@ -89,7 +93,8 @@ const PokedexListHeadline = styled.p`
   background: white;
 `;
 
-const PokedexListButton = styled.button`
+const PokedexListButton = styled(NavLink)`
+  display: block;
   margin: 5px;
   font-size: 16px;
   padding: 10px;
@@ -104,7 +109,8 @@ const PokedexListButton = styled.button`
   border: 0.5px solid rgba(128, 0, 0, 1);
   border-radius: 5px;
 
-  &:hover {
+  &:hover,
+  &.active {
     color: rgba(128, 0, 0, 1);
     background: rgb(255, 255, 255);
     background: linear-gradient(

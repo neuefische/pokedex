@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Navigation() {
   return (
     <StyledNavigation>
-      <StyledLink to="/">Home</StyledLink>
+      <StyledLink exact to="/">
+        Home
+      </StyledLink>
       <StyledLink to="/pokedex">Pokedex</StyledLink>
     </StyledNavigation>
   );
@@ -17,7 +19,7 @@ const StyledNavigation = styled.nav`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +30,8 @@ const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &.active {
     color: rgba(128, 0, 0, 1);
     background: white;
   }
