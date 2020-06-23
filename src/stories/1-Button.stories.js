@@ -5,6 +5,9 @@ import { Button } from "@storybook/react/demo";
 export default {
   title: "Button",
   component: Button,
+  decorators: [
+    (storyfn) => <div style={{ background: "red" }}>{storyfn()}</div>,
+  ],
 };
 
 export const Text = () => (
