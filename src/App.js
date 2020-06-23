@@ -1,16 +1,14 @@
 import React from "react";
 import Home from "./components/Home";
-import "./components/App.css";
 import Header from "./components/Header";
 import Pokedex from "./components/Pokedex";
 import Navigation from "./components/Navigation";
 import { Route, Switch } from "react-router-dom";
+import styled from "styled-components";
 
 function App() {
-  const pathname = window.location.pathname;
-
   return (
-    <div className="App">
+    <Grid>
       <Header>
         <Navigation />
       </Header>
@@ -18,8 +16,14 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/pokedex" component={Pokedex} />
       </Switch>
-    </div>
+    </Grid>
   );
 }
 
 export default App;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-rows: 80px auto;
+  height: 100vh;
+`;

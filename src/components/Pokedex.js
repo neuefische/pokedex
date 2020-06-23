@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Pokedex.css";
+import styled from "styled-components";
 
 export default function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -28,23 +28,20 @@ export default function Pokedex() {
   }
 
   return (
-    <div className="Pokedex--container">
-      <ul className="Pokedex--list">
-        <p className="Pokedex--list__headline">Select your Pokemon:</p>
+    <PokedexContainer>
+      <PokedexList>
+        <PokedexListHeadline>Select your Pokemon:</PokedexListHeadline>
         {pokemonList.map((pokemon) => (
           <li key={pokemon.name}>
-            <button
-              className="Pokedex--list__button active"
-              onClick={() => selectPokemon(pokemon)}
-            >
+            <PokedexListButton onClick={() => selectPokemon(pokemon)}>
               {pokemon.name}
-            </button>
+            </PokedexListButton>
           </li>
         ))}
-      </ul>
+      </PokedexList>
 
-      <div className="Pokedex--detail">
-        <div className="Pokedex--detail__pokemon">
+      <PokedexDetail>
+        <div>
           {pokemonDetail ? (
             <>
               <p>{pokemonDetail.name}</p>
@@ -59,7 +56,93 @@ export default function Pokedex() {
             </p>
           )}
         </div>
-      </div>
-    </div>
+      </PokedexDetail>
+    </PokedexContainer>
   );
 }
+
+const PokedexContainer = styled.main`
+  display: grid;
+  grid-template-columns: 250px auto;
+  overflow: scroll;
+`;
+
+const PokedexList = styled.ul`
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+  overflow: scroll;
+  width: 250px;
+  list-style: none;
+  border-right: 1px solid rgba(128, 0, 0, 1);
+`;
+
+const PokedexListHeadline = styled.p`
+  color: rgba(128, 0, 0, 1);
+  position: sticky;
+  top: 0;
+  font-size: 16px;
+  width: 250px;
+  height: 50px;
+  padding: 16px;
+  margin: 0;
+  background: white;
+`;
+
+const PokedexListButton = styled.button`
+  margin: 5px;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    35deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(128, 0, 0, 1) 100%
+  );
+  border: 0.5px solid rgba(128, 0, 0, 1);
+  border-radius: 5px;
+
+  &:hover {
+    color: rgba(128, 0, 0, 1);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      124deg,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(212, 212, 212, 1) 100%
+    );
+    border: 0.5px solid rgba(128, 0, 0, 1);
+    border-radius: 5px;
+  }
+`;
+
+const PokedexDetail = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      124deg,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(212, 212, 212, 1) 100%
+    );
+    border-radius: 50%;
+    border: 5px outset rgba(128, 0, 0, 1);
+
+    p {
+      text-align: center;
+      width: 200px;
+      color: rgba(128, 0, 0, 1);
+      font-size: 18px;
+    }
+  }
+`;

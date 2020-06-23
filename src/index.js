@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "./components/index.css";
+import GlobalStyles from "./components/GlobalStyles";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyles />
       <App />
     </Router>
   </React.StrictMode>,
