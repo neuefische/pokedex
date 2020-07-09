@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.test.js matches snapshot 1`] = `
+"<header class=\\"sc-AxjAm bvrubO\\">
+  <h1 class=\\"headline\\">Pokedex</h1>Foo.Bar
+</header>"
+`;

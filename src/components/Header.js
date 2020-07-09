@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function Header({ children }) {
   return (
     <StyledHeader>
-      <h1>Pokedex</h1>
+      <h1 className="headline">Pokedex</h1>
       {children}
     </StyledHeader>
   );
@@ -24,7 +24,7 @@ const StyledHeader = styled.header`
   border-radius: 0 0 80px 80px;
 
   h1 {
-    color: white;
+    color: green;
     margin: 0 20px;
   }
 `;

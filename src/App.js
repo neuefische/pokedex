@@ -14,7 +14,7 @@ function App() {
       </Header>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/pokedex" component={Pokedex} />
+        <Route path="/pokedex" component={() => <Pokedex apiUrl="https://pokeapi.co/api/v2/pokemon?limit=100" />} />
       </Switch>
     </Grid>
   );

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export default function Pokedex() {
+export default function Pokedex({ apiUrl }) {
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemonDetail, setPokemonDetail] = useState("");
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         setPokemonList(data.results);
@@ -33,7 +33,7 @@ export default function Pokedex() {
       <PokedexList>
         <PokedexListHeadline>Select your Pokemon:</PokedexListHeadline>
         {pokemonList.map((pokemon) => (
-          <li key={pokemon.name}>
+          <li key={pokemon.name} data-testid="pokemon-navigation-item">
             <PokedexListButton
               to={`/pokedex/${pokemon.name}`}
               onClick={() => selectPokemon(pokemon)}
