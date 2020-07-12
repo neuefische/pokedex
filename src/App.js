@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Pokedex from "./components/Pokedex";
+import Register from "./components/auth/Register";
 import Navigation from "./components/Navigation";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
@@ -14,6 +15,7 @@ function App() {
       </Header>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/register" component={Register} />
         <Route path="/pokedex" component={() => <Pokedex apiUrl="https://pokeapi.co/api/v2/pokemon?limit=100" />} />
       </Switch>
     </Grid>
