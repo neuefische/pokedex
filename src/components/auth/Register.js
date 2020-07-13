@@ -9,7 +9,7 @@ export default function Register () {
   const userPassword = useRef(null)
 
   async function register (name, email, password) {
-    const newUser = await firebaseApp().createUserWithEmailAndPassword(
+    const newUser = await firebaseApp.createUserWithEmailAndPassword(
       email.current.value,
       password.current.value
     )

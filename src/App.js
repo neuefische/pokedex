@@ -7,20 +7,29 @@ import Login from "./components/auth/Login";
 import Navigation from "./components/Navigation";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
+import useAuth from './components/auth/useAuth'
+import LoginContext from './components/auth/loginContext'
+import UserBar from './components/auth/UserBar'
+import firebaseApp from './firebase'
 
 function App() {
+  const user = useAuth()
+
   return (
-    <Grid>
-      <Header>
-        <Navigation />
-      </Header>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route path="/pokedex" component={() => <Pokedex apiUrl="https://pokeapi.co/api/v2/pokemon?limit=100" />} />
-      </Switch>
-    </Grid>
+    <LoginContext.Provider value={{ user, firebaseApp }}>
+      <Grid>
+        <Header>
+          <Navigation />
+          <UserBar />
+        </Header>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route path="/pokedex" component={() => <Pokedex apiUrl="https://pokeapi.co/api/v2/pokemon?limit=100" />} />
+        </Switch>
+      </Grid>
+    </LoginContext.Provider>
   );
 }
 
