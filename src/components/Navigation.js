@@ -1,14 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import LoginContext from './auth/loginContext'
 
 export default function Navigation() {
+  const { user } = useContext(LoginContext)
+
   return (
     <StyledNavigation>
       <StyledLink exact to="/">
         Home
       </StyledLink>
       <StyledLink to="/pokedex">Pokedex</StyledLink>
+      {user
+        ? <StyledLink to="/favlist">Fav List</StyledLink>
+        : null
+      }
     </StyledNavigation>
   );
 }

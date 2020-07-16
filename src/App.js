@@ -11,6 +11,7 @@ import useAuth from './components/auth/useAuth'
 import LoginContext from './components/auth/loginContext'
 import UserBar from './components/auth/UserBar'
 import firebaseApp from './firebase'
+import UserFavList from './components/UserFavList'
 
 function App() {
   const user = useAuth()
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route path="/pokedex" component={() => <Pokedex apiUrl="https://pokeapi.co/api/v2/pokemon?limit=100" />} />
+          <Route exact path="/favlist" component={UserFavList} />
         </Switch>
       </Grid>
     </LoginContext.Provider>
