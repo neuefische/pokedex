@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import AddToListButton from './AddToListButton'
+import LoginContext from './auth/loginContext'
 
 export default function Pokedex({ apiUrl }) {
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemonDetail, setPokemonDetail] = useState("");
+  const { user } = useContext(LoginContext)
 
   useEffect(() => {
     fetch(apiUrl)
@@ -53,6 +56,10 @@ export default function Pokedex({ apiUrl }) {
                 alt={pokemonDetail.name}
                 src={pokemonDetail.sprites.front_default}
               />
+              {user
+                ? <AddToListButton userId={user.uid} pokemonDetail={pokemonDetail} />
+                : null
+              }
             </>
           ) : (
             <p>
